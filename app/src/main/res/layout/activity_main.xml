@@ -26,6 +26,7 @@
             android:onClick="@{()->viewModel.onClickHandler()}"
             app:bind_image="@{user.profileURL}"
             app:bind_image_error="@{@drawable/android}"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -41,5 +42,17 @@
             android:layout_gravity="center"
             android:textSize="30dp"
             tools:text="이부분에 주소가 표시됩니다."/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{()->viewModel.onButtonClick()}"
+            android:text="데이터 변경"/>
+
+        <FrameLayout
+            android:id="@+id/fl_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
     </LinearLayout>
 </layout>

@@ -9,9 +9,14 @@ class MainViewModel: ViewModel() {
     var TAG = this.javaClass.simpleName
 
     var clickConverter = MutableLiveData<Unit>()
+    var btnClickConverter = MutableLiveData<Unit>()
 
     fun onClickHandler() {
         Log.d(TAG, "클릭 발생")
         clickConverter.value = Unit
+    }
+
+    fun onButtonClick(){
+        btnClickConverter.value = Unit
     }
 }
