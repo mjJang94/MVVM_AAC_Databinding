@@ -1,4 +1,4 @@
-package com.mj.databinding
+package com.mj.databinding.viewModel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

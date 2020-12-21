@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import com.mj.databinding.MainActivity
+import com.mj.databinding.AddDogInfoActivity
 import com.mj.databinding.R
 import com.mj.databinding.databinding.FragmentListBinding
 
@@ -26,7 +26,7 @@ class ListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_list, container, false)
-        binding.viewmodel = MainActivity.User("asd","24")
+        binding.viewmodel = AddDogInfoActivity.User("우리강아지","등록하기")
         binding.lifecycleOwner = activity
         return binding.root
     }

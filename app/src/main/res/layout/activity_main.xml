@@ -4,15 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <import type="android.view.View"/>
+
+        <import type="android.view.View" />
 
         <variable
-            name="user"
-            type="com.mj.databinding.MainActivity.User"/>
-
-        <variable
-            name="viewModel"
-            type="com.mj.databinding.MainViewModel"/>
+            name="mainViewModel"
+            type="com.mj.databinding.viewModel.MainViewModel" />
     </data>
 
     <LinearLayout
@@ -21,38 +18,76 @@
         android:gravity="center"
         android:orientation="vertical">
 
-        <ImageView android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="@{()->viewModel.onClickHandler()}"
-            app:bind_image="@{user.profileURL}"
-            app:bind_image_error="@{@drawable/android}"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{user.name}"
-            android:layout_gravity="center"
-            android:textSize="30dp"
-            tools:text="이부분에 이름이 표시됩니다."/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{user.age}"
-            android:layout_gravity="center"
-            android:textSize="30dp"
-            tools:text="이부분에 주소가 표시됩니다."/>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="@{()->viewModel.onButtonClick()}"
-            android:text="데이터 변경"/>
 
         <FrameLayout
             android:id="@+id/fl_fragment"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/edit_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="15dp"
+                android:hint="이름을 입력하세요."
+                android:background="@null"/>
+
+            <EditText
+                android:id="@+id/edit_age"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:textSize="15dp"
+                android:hint="나이를 입력하세요."
+                android:background="@null"/>
+
+            <EditText
+                android:id="@+id/edit_breed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:textSize="15dp"
+                android:hint="종을 입력하세요."
+                android:background="@null"/>
+
+            <EditText
+                android:id="@+id/edit_color"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:textSize="15dp"
+                android:hint="색상을 입력하세요."
+                android:background="@null"/>
+
+            <EditText
+                android:id="@+id/edit_character"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:textSize="15dp"
+                android:hint="특징을 입력하세요."
+                android:background="@null"/>
+        </LinearLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{()->mainViewModel.onButtonClick()}"
+            android:text="등록하기" />
+
+
 
     </LinearLayout>
 </layout>
